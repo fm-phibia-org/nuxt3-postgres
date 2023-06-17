@@ -1,27 +1,11 @@
 <script setup lang="ts">
   import { useCounterStore } from "@/store/counter"
   import { storeToRefs } from "pinia"
-  import { initializeApp } from "firebase/app"
-  import { getAnalytics } from "firebase/analytics"
 
   const counterStore = useCounterStore()
   const { increment } = counterStore
   const { count } = storeToRefs(counterStore)
 
-  const runtimeConfig = useRuntimeConfig()
-  const firebaseConfig = {
-    apiKey: runtimeConfig.apiKey,
-    authDomain: runtimeConfig.authDomain,
-    projectId: runtimeConfig.projectId,
-    storageBucket: runtimeConfig.storageBucket,
-    messagingSenderId: runtimeConfig.messagingSenderId,
-    appId: runtimeConfig.appId,
-    measurementId: runtimeConfig.measurementId
-  }
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig)
-  const analytics = getAnalytics(app)
 </script>
 
 <template>

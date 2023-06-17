@@ -61,3 +61,21 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+# firebase
+
+## settings
+
+### Create .env file likes the following
+
+```
+NUXT_API_KEY=
+NUXT_AUTH_DOMAIN=
+NUXT_DATABASE_URL=
+NUXT_PROJECT_ID=
+NUXT_STORAGE_BUCKET=
+NUXT_MESSAGING_SENDER_ID=
+NUXT_APP_ID=
+NUXT_MEASUREMENT_ID=
+```

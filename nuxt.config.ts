@@ -1,6 +1,16 @@
 import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    apiKey: '',
+    authDomain: '',
+    databaseUrl: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: ''
+  },
   modules: [
     "@nuxtjs/tailwindcss",
     '@pinia/nuxt',

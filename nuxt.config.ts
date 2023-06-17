@@ -3,6 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
+    '@pinia/nuxt',
   ],
   css: [
     "vuetify/lib/styles/main.sass",

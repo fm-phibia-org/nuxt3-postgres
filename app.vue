@@ -1,5 +1,8 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div>
-    <NuxtWelcome />
+    <v-btn>aaaa</v-btn>
   </div>
 </template>

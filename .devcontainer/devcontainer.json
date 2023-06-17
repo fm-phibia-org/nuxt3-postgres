@@ -1,0 +1,25 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "dotenv.dotenv-vscode",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "oderwat.indent-rainbow",
+        "seatonjiang.gitmoji-vscode",
+        "shardulm94.trailing-spaces",
+        "streetsidesoftware.code-spell-checker",
+        "stylelint.vscode-stylelint",
+        "vscode-icons-team.vscode-icons",
+        "vue.volar",
+        "vuetifyjs.vuetify-vscode",
+        "vue.vscode-typescript-vue-plugin"
+      ]
+    }
+  },
+  "postCreateCommand": "sh .devcontainer/create.sh",
+  "postAttachCommand": "sh .devcontainer/attach.sh"
+}

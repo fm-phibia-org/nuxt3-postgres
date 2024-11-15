@@ -3,3 +3,4 @@ cd /tmp
 git clone https://github.com/awslabs/git-secrets
 cd git-secrets
 sudo make install
+npm install -g firebase-tools

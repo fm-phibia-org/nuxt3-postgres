@@ -16,7 +16,6 @@
         "vscode-icons-team.vscode-icons",
         "Vue.volar",
         "vuetifyjs.vuetify-vscode",
-        "vue.vscode-typescript-vue-plugin",
         "GoogleCloudTools.firebase-dataconnect-vscode"
       ]
     }

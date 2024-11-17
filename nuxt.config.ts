@@ -11,17 +11,22 @@ export default defineNuxtConfig({
     appId: '',
     measurementId: ''
   },
+
   modules: [
     "@nuxtjs/tailwindcss",
     '@pinia/nuxt',
   ],
+
   css: [
     "vuetify/lib/styles/main.sass",
     "mdi/css/materialdesignicons.min.css",
     "@/assets/css/tailwind.css"
   ],
+
+  // devtools: { enabled: true }
   build: {
     transpile: ['vuetify'],
-  }
-  // devtools: { enabled: true }
+  },
+
+  compatibilityDate: "2024-11-17"
 })

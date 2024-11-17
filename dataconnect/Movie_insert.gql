@@ -2,6 +2,6 @@
 # Only one un-named mutation is allowed per file.
 mutation {
   movie_insert(
-    data: {id: "11111111222233334444555555555556", genre: "aaa", imageUrl: "", title: "title"}
+    data: {id: "11111111222233334444555555555555", genre: "", imageUrl: "", title: ""}
   )
 }

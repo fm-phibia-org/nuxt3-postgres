@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "@movie-app/movies": "file:dataconnect/movies-genarated",
+    "@movie-app/movies": "file:movies-genarated",
     "@pinia/nuxt": "^0.4.11",
     "firebase": "^11.0.2",
     "mdi": "^2.2.43",

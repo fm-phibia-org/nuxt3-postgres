@@ -2,17 +2,15 @@ import { defineNuxtPlugin } from "#app"
 import { initializeApp } from 'firebase/app'
 
 export default defineNuxtPlugin(() => {
-  useState('firebaseApp', () => {
-    const runtimeConfig = useRuntimeConfig()
-    const firebaseConfig = {
-      apiKey: runtimeConfig.apiKey,
-      authDomain: runtimeConfig.authDomain,
-      projectId: runtimeConfig.projectId,
-      storageBucket: runtimeConfig.storageBucket,
-      messagingSenderId: runtimeConfig.messagingSenderId,
-      appId: runtimeConfig.appId,
-      measurementId: runtimeConfig.measurementId
-    }
-    return initializeApp(firebaseConfig)
-  })
+  const runtimeConfig = useRuntimeConfig()
+  const firebaseConfig = {
+    apiKey: runtimeConfig.public.apiKey,
+    authDomain: runtimeConfig.public.authDomain,
+    projectId: runtimeConfig.public.projectId,
+    storageBucket: runtimeConfig.public.storageBucket,
+    messagingSenderId: runtimeConfig.public.messagingSenderId,
+    appId: runtimeConfig.public.appId,
+    measurementId: runtimeConfig.public.measurementId
+  }
+  initializeApp(firebaseConfig)
 })

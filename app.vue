@@ -1,43 +1,62 @@
 <script setup lang="ts">
-  import { useCounterStore } from "@/store/counter"
-  import { storeToRefs } from "pinia"
+  import {
+    executeQuery,
+  } from 'firebase/data-connect'
+  import { listMoviesRef, type ListMoviesData } from '@movie-app/movies'
+  import { ref } from 'vue'
 
-  const counterStore = useCounterStore()
-  const { increment } = counterStore
-  const { count } = storeToRefs(counterStore)
+  const movies = ref<ListMoviesData>()
+  const waiting = ref(true)
+
+  const getData = () => {
+    const ref = listMoviesRef();
+    executeQuery(ref).then((data) => {
+      console.log(data.data);
+      movies.value = data.data;
+    });
+  }
+
+  onMounted(() => {
+    waiting.value = false
+  })
 
 </script>
 
 <template>
   <div>
-    <h1>
-      Count:{{ count }}
-    </h1>
-    <button
-      @click="increment"
+    <v-btn
+      :disabled="waiting"
+      color="success"
+      class="m-2"
+      :class="
+        waiting ? 'hidden' : ''
+      "
+      @click="getData"
     >
-      たすよ
-    </button>
-    <br />
-    <nuxt-link
-      to="/"
-    >
-      もどる
-    </nuxt-link>
-  </div>
-  <div>
-    <v-btn>
-      aaaa
+      Get Data
     </v-btn>
     <div
-      class="
-        text-3xl
-        font-bold
-        underline
-        bg-gray-700
-      "
+      v-if="waiting"
     >
-      トップ
+      Loading...
     </div>
+    <v-card
+      color="purple"
+      class="m-6"
+      v-for="movie in movies?.movies"
+      :key="movie.id"
+    >
+      <v-chip
+        class="m-2"
+      >
+        {{ movie.title }}
+      </v-chip>
+      <v-card-title>
+        Title: {{ movie.title }}
+      </v-card-title>
+      <v-card-text>
+        ID: {{ movie.id }}
+      </v-card-text>
+    </v-card>
   </div>
 </template>
